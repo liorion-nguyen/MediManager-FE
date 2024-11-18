@@ -168,8 +168,7 @@ export default function UpdatePermissions() {
             sx={{
                 display: "flex",
                 flexDirection: 'column',
-                gap: '30px',
-                minWidth: '35vw'
+                gap: '30px'
             }}
         >
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

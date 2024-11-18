@@ -1,4 +1,4 @@
-import { StyleInpSearch } from "../style-mui";
+import { StyleInpSearch, StyleListSearch } from "../style-mui";
 import { StyleColumnGap20, StyleColumnGap5, StyleDetailChat, StyleExtraAvater, StyleExtraLi, StyleExtraName, StyleExtraTitle, StyleIconLogo, StyleNewChat, StyleRowGap10, StyleSearchChat } from "../style-mui";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,7 +6,6 @@ import { Box, Button, CircularProgress, Skeleton } from "@mui/material";
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import { MessageActions } from "../../../../../redux/advise";
 import { request } from "../../../../../api/request";
-import { userInfo } from "os";
 
 type UserData = {
     id: string;
@@ -45,7 +44,6 @@ export default function ChatAiExtra() {
                     }
                 }));
                 setBoxChat(dataFake);
-
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -56,13 +54,15 @@ export default function ChatAiExtra() {
     }, [user, idBoxChat])
 
     const handleClick = async (box: any) => {
-        dispatch(MessageActions.SetChoose(box));
+        dispatch(MessageActions.SetChoose({
+            ...box,
+            profileImage: box.profileImage
+        }));
     }
 
     const handleNewchat = () => {
         dispatch(MessageActions.SetChoose(null))
     }
-
 
     useEffect(() => {
         const handler = setTimeout(() => {
@@ -109,23 +109,7 @@ export default function ChatAiExtra() {
                     <img src="/Images/home/message/icon_search.svg" />
                     <StyleInpSearch type="text" placeholder="Search..." value={search} onChange={(e: any) => { setSearch(e.target.value); if (e.target.value == "") setDataSearch([]) }} />
                     {search &&
-                        <Box
-                            sx={{
-                                background: "white",
-                                position: 'absolute',
-                                top: '120%',
-                                width: '100%',
-                                height: 'auto',
-                                left: '0',
-                                padding: '10px',
-                                borderRadius: '0 0 20px 20px',
-                                boxShadow: '0 5px 12px 5px #e2e2e2',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                gap: '20px'
-                            }}
-                        >
+                        <StyleListSearch>
                             {
                                 loading ? (
                                     <CircularProgress />
@@ -147,7 +131,7 @@ export default function ChatAiExtra() {
                                 )
                             }
                             <Button variant="outlined" onClick={() => setSearch("")}>Close</Button>
-                        </Box>}
+                        </StyleListSearch>}
                 </StyleSearchChat>
                 <ul>
                     {boxChat && Array.isArray(boxChat) ? (

@@ -26,14 +26,14 @@ export default function SignIn() {
             password: password
         };
         const fetch = await request("POST", data, "auth/login");
-        if (fetch && fetch.status === 401) {
+        if (!fetch) {
             dispatch(SnackbarActions.OpenSnackbar(
                 {
                     open: true,
                     content: fetch.description,
                     state: "error",
                 }))
-        } else if (fetch.status === 201) {
+        } else if (fetch) {
             Cookies.set('accessToken', fetch.data.accessToken, { expires: 3 / 288, path: '/' });
             Cookies.set('refreshToken', fetch.data.refreshToken, { expires: 7, path: '/' });
             dispatch(SnackbarActions.OpenSnackbar(
@@ -43,7 +43,7 @@ export default function SignIn() {
                     state: "succes",
                 }))
             
-            fetch.data.user.role === "Admin" ? navigate(`/admin`) : navigate(`/`);
+            fetch.data.role === "Admin" ? navigate(`/admin`) : navigate(`/`);
         }
     }
     return (

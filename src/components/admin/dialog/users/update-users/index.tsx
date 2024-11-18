@@ -55,6 +55,11 @@ export default function UpdateUser() {
             }
             const formData = new FormData();
             formData.append('file', fileToUpload);
+            if (dataUser.profileImage) {
+                await request("DELETE", { "imageUrl": dataUser.profileImage }, "firebase/delete");
+                console.log(dataUser.profileImage);
+                
+            }
             const fetch = await request("POST", formData, "firebase/upload");
             if (fetch.imageUrl) {
                 dispatch(SnackbarActions.OpenSnackbar(
@@ -64,10 +69,6 @@ export default function UpdateUser() {
                         state: "correct",
                     }
                 ));
-
-                if (dataUser.profileImage) {
-                    const deleteFetch = await request("DELETE", { "imageUrl": dataUser.profileImage }, "firebase/delete");
-                }
 
                 const updateUser = await request("PUT", {
                     ...dataUser,
@@ -173,7 +174,7 @@ export default function UpdateUser() {
                 display: "flex",
                 flexDirection: 'column',
                 gap: '30px',
-                minWidth: '35vw'
+                
             }}
         >
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
