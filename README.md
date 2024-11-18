@@ -1,47 +1,32 @@
-# Getting Started with Create React App
+![Logo](./public/Images/screens/Logo.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# MediManager
 
-## Available Scripts
+Dự án "MediManager" là một hệ thống quản lý bệnh viện, cung cấp các chức năng quản lý bệnh nhân, bác sĩ, và các dịch vụ y tế khác.
 
-In the project directory, you can run:
+## Mô tả dự án
 
-### `npm start`
+Hệ thống này được thiết kế để cung cấp một nền tảng quản lý toàn diện, cho phép người dùng quản lý quá trình chăm sóc sức khỏe một cách hiệu quả. MediManager không chỉ giúp người dùng theo dõi thông tin bệnh nhân mà còn cung cấp các công cụ giao tiếp giữa bệnh nhân và bác sĩ.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+MediManager hoạt động tốt trên cả máy tính để bàn và thiết bị di động, mang đến trải nghiệm quản lý linh hoạt cho người dùng.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Các tính năng chính:**
+- Quản lý thông tin bệnh nhân và bác sĩ.
+- Quản lý lịch hẹn và dịch vụ y tế.
+- Tính năng chatbox và gửi tin nhắn giữa bệnh nhân và bác sĩ.
+- Đăng nhập bằng scan QR code.
+- Xem bản đồ.
 
-### `npm test`
+## Công nghệ sử dụng:
+* [React.js](https://reactjs.org/): Thư viện JavaScript cho việc xây dựng giao diện người dùng.
+* [NestJS](https://nestjs.com/): Framework cho Node.js, giúp xây dựng ứng dụng server-side.
+* [Redux](https://redux.js.org/): Thư viện quản lý trạng thái cho ứng dụng React.
+* [MongoDB](https://www.mongodb.com/): Hệ quản trị cơ sở dữ liệu NoSQL, cho phép lưu trữ và quản lý dữ liệu một cách hiệu quả.
+* [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket): Giao thức cho phép giao tiếp hai chiều giữa client và server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## [Figma](https://www.figma.com/design/adusr00A4EOcLhXFn58IaN/MEDDICAL---Hospital-website-template-(Community))
 
-### `npm run build`
+## [Link Website](https://medi-manager.vercel.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# MediManager-FE
+# Demo
+[![Xem video](./public/Images/screens/previews.png)(./)](public/Images/screens/demo.mp4)

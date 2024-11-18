@@ -620,3 +620,19 @@ export const StyleInpSearch = muiStyled('input')(({ theme }) => ({
         color: "rgba(35, 50, 85, 0.3)",
     }
 }));
+
+export const StyleListSearch = muiStyled(Box)(({ theme }) => ({
+    background: "white",
+    position: 'absolute',
+    top: '120%',
+    width: '100%',
+    height: 'auto',
+    left: '0',
+    padding: '10px',
+    borderRadius: '0 0 20px 20px',
+    boxShadow: '0 5px 12px 5px #e2e2e2',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '20px'
+}));

@@ -89,7 +89,7 @@ export default function CreateUser() {
                 display: "flex",
                 flexDirection: 'column',
                 gap: '30px',
-                minWidth: '35vw'
+                
             }}
         >
             <StyleTitle>Add new User</StyleTitle>

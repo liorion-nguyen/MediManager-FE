@@ -145,7 +145,7 @@ export default function CreatePermissions() {
                 display: "flex",
                 flexDirection: 'column',
                 gap: '30px',
-                minWidth: '35vw'
+                
             }}
         >
             <StyleTitle>Add new Permissions</StyleTitle>

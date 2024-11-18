@@ -122,7 +122,7 @@ export default function UpdateService() {
                 display: "flex",
                 flexDirection: 'column',
                 gap: '30px',
-                minWidth: '35vw'
+                
             }}
         >
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
